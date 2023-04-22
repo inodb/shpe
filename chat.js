@@ -189,13 +189,3 @@ mediaQuery.addEventListener('change', handleSizeChange)
 
 // Initial check
 handleSizeChange(mediaQuery)
-
-(function(history){
-var pushState = history.pushState;
-history.pushState = function(state) {
-      // YOUR CUSTOM HOOK / FUNCTION
-      console.log('I am called from pushStateHook');
-      init();
-      return pushState.apply(history, arguments);
-};
-})(window.history);
