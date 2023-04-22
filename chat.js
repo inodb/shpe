@@ -1,5 +1,4 @@
-(function(history){
-      
+
 const SIZE = 60 // size of the chat button in pixels
 const BTN_RAD = SIZE / 2 // radius of the chat button in pixels
 const BG_CHAT = 'purple' // background color of the chat button
@@ -190,5 +189,13 @@ mediaQuery.addEventListener('change', handleSizeChange)
 
 // Initial check
 handleSizeChange(mediaQuery)
-      
+
+(function(history){
+var pushState = history.pushState;
+history.pushState = function(state) {
+      // YOUR CUSTOM HOOK / FUNCTION
+      console.log('I am called from pushStateHook');
+      init();
+      return pushState.apply(history, arguments);
+};
 })(window.history);
