@@ -1,4 +1,5 @@
-
+(function(history){
+      
 const SIZE = 60 // size of the chat button in pixels
 const BTN_RAD = SIZE / 2 // radius of the chat button in pixels
 const BG_CHAT = 'purple' // background color of the chat button
@@ -189,4 +190,5 @@ mediaQuery.addEventListener('change', handleSizeChange)
 
 // Initial check
 handleSizeChange(mediaQuery)
-
+      
+})(window.history);
